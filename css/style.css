@@ -511,9 +511,41 @@ img{
 	transition: 1s ease;
 }
 
-.card-outer .card-inner-box.offsetleft {
-	transition: .5s ease;
-	transform: translate(350px);
+.card-outer .card-inner-box {
+    position: relative;
+    min-height: 600px;
+    background-image: -moz-linear-gradient( 110deg, rgb(145,71,255) 0%, rgb(121,39,245) 100%);
+    background-image: -webkit-linear-gradient( 110deg, rgb(145,71,255) 0%, rgb(121,39,245) 100%);
+    background-image: -ms-linear-gradient( 110deg, rgb(145,71,255) 0%, rgb(121,39,245) 100%);
+    transition: 1s ease;
+    /* 新增修复代码 */
+    width: 100% !important; 
+    max-width: 100% !important; 
+    overflow: visible !important; 
+    box-sizing: border-box; 
+    padding: 20px; 
+}
+
+/* 新增右侧内容区文字修复 */
+.card-item .card-inner {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    hyphens: auto; 
+}
+
+/* 新增Contact表单修复 */
+.contact-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-form .form-group {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 .card-item {

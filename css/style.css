@@ -2014,3 +2014,41 @@ h3, h4, h5, p {
     margin-bottom: 25px;
     border-bottom: 1px solid #eee;
 }
+
+/* 核心布局调整 */
+.page-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    width: 100% !important;
+    max-width: 1440px; /* 限制最大宽度，避免过宽 */
+    margin: 0 auto; /* 居中页面 */
+    padding: 0 20px; /* 左右留白 */
+    box-sizing: border-box;
+}
+
+/* 侧边栏固定宽度 + 内容区自适应 */
+.mobile-menu {
+    width: 280px !important; /* 侧边栏固定宽度 */
+    flex-shrink: 0; /* 禁止缩小 */
+    background: #f8f8f8; /* 侧边栏背景色，区分内容区 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 内容区占满剩余宽度 */
+.card-outer {
+    flex: 1; /* 自动填充剩余空间 */
+    max-width: calc(100% - 280px); /* 减去侧边栏宽度 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 响应式适配：手机端堆叠 */
+@media (max-width: 768px) {
+    .mobile-menu,
+    .card-outer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px; /* 板块间距 */
+    }
+}
